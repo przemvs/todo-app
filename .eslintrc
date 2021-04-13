@@ -1,0 +1,50 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "allowImportExportEverywhere": false,
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": false
+    }
+  },
+  "extends": ["airbnb", "plugin:prettier/recommended", "plugin:react/recommended"],
+  "plugins": ["react-hooks"],
+  "rules": {
+    "camelcase": "off",
+    "class-methods-use-this": "off",
+    "import/no-cycle": "off",
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": "off",
+    "jsx-a11y/label-has-for": "off",
+    "jsx-a11y/tabindex-no-positive": "off",
+    "no-undef": "off",
+    "no-var": "off",
+    "no-case-declarations": "off",
+    "global-require": "off",
+    "import/no-dynamic-require": "off",
+    "react/button-has-type": "off",
+    "react/display-name": "off",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-curly-newline": "off",
+    "react/jsx-one-expression-per-line": "off",
+    // One below should be enabled and fixed
+    "react/prop-types": "off",
+    // One below shows many missing dependiences, should be refactored in a single batch for all (--fix option of eslint helps achieving that in a one shot)
+    // "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["node_modules", "src/"],
+        "paths": ["src"]
+      },
+      "webpack": true
+    },
+    "react": {
+      "version": "detect"
+    }
+  }
+}
